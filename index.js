@@ -13,8 +13,29 @@ app.use(express.json());
 // 1. PUBLIC ROUTES
 
 // Root Test Route
+// index.js (Corrected GET / Route)
+
+// index.js (Final and Enhanced Readable GET / Route)
+
+// index.js (Final Array-Based GET / Route for Clarity)
+
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to the Resume System Backend API (In-Memory)!' });
+    res.json({
+        "status": "Welcome to the Resume System Backend API Prototype",
+        "message": "This is a working prototype for the internship trial task. Please use Postman or cURL to verify the functionality.",
+        "documentation": "Full instructions and testing sequence are available in the GitHub README.",
+        
+        "endpoints_summary": [
+            "--- START TESTING SEQUENCE ---",
+            "1. AUTHENTICATION: POST /api/auth/register, POST /api/auth/login",
+            "2. SECURITY CHECK: GET /api/user/profile (Test with and without JWT in Authorization header)",
+            "3. DATA MANAGEMENT: POST/GET /api/courses and POST/GET /api/projects",
+            "4. AUTOMATION: GET /api/user/summary (Generates final resume summary)",
+            "5. RESET: POST /reset-db (Always run this first to clear data)"
+        ],
+        
+        "note": "The project source code is available on GitHub."
+    });
 });
 
 // New Route: Reset the mock database for clean testing
